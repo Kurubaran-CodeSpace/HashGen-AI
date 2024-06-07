@@ -1,5 +1,7 @@
+# HashGen AI
 
-# hashgen_ai
+[![Pub Version](https://img.shields.io/pub/v/hashgen_ai)](https://pub.dev/packages/hashgen_ai)
+[![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 
 `hashgen_ai` is a Flutter package that utilizes OpenAI's API to generate relevant hashtags based on the provided content and the desired number of hashtags. This package supports Android, iOS, web, and macOS platforms.
 
