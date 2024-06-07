@@ -112,6 +112,7 @@ If you encounter any problems or have questions about `hashgen_ai`, please feel 
 ### Authors
 
 - Kurubaran Anandhan
+- Hemalatha Gurunathan
 
 ### License
 
