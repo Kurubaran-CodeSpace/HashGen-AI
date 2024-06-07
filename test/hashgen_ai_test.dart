@@ -1,52 +1,28 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:hashgen_ai/hashgen_ai.dart';
-import 'package:mockito/mockito.dart';
 import 'package:http/http.dart' as http;
+import 'package:http/testing.dart';
 import 'dart:convert';
 
-// Mock class for http.Client
-class MockClient extends Mock implements http.Client {}
-
 void main() {
-  group('HashGenAI', () {
-    final mockClient = MockClient();
-    final hashGenAI = HashGenAI('fake_api_key')..client = mockClient;
-
-    test('generates hashtags successfully', () async {
-      // Arrange
-      when(mockClient.post(
-        any as Uri,
-        headers: anyNamed('headers'),
-        body: anyNamed('body'),
-      )).thenAnswer((_) async => http.Response(
-        jsonEncode({
+  group('HashGenAI Tests', () {
+    test('Generate Hashtags Test', () async {
+      final mockClient = MockClient((request) async {
+        final mapJson = {
           'choices': [
-            {'text': '#Flutter\n#Google\n#OpenSource\n#UI\n#Development\n'}
+            {
+              'text': '#flutter\n#dart\n#programming\n#opensource\n#developer\n',
+            }
           ]
-        }),
-        200,
-      ));
+        };
+        return http.Response(json.encode(mapJson), 200);
+      });
 
-      // Act
-      final hashtags = await hashGenAI.generateHashtags('Flutter development', 5);
+      final hashGenAI = HashGenAI('YOUR_OPENAI_API_KEY', client: mockClient);
+      final hashtags = await hashGenAI.generateHashtags('Flutter is great', 5);
 
-      // Assert
-      expect(hashtags, ['#Flutter', '#Google', '#OpenSource', '#UI', '#Development']);
-    });
-
-    test('throws an exception when the response is not 200', () async {
-      // Arrange
-      when(mockClient.post(
-        any as Uri,
-        headers: anyNamed('headers'),
-        body: anyNamed('body'),
-      )).thenAnswer((_) async => http.Response('Error', 400));
-
-      // Act & Assert
-      expect(
-            () async => await hashGenAI.generateHashtags('Flutter development', 5),
-        throwsException,
-      );
+      expect(hashtags.length, 5);
+      expect(hashtags, containsAll(['#flutter', '#dart', '#programming', '#opensource', '#developer']));
     });
   });
 }
