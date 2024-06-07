@@ -23,10 +23,7 @@ Add `hashgen_ai` to your `pubspec.yaml`:
 
 ```yaml
 dependencies:
-  hashgen_ai:
-    git:
-      url: https://github.com/Kurubaran-CodeSpace/HashGen-AI.git
-      ref: main
+  hashgen_ai: ^1.0.1
 ```
 
 Then, run `flutter pub get` to install the package.
