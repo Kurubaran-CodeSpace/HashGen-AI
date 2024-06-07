@@ -103,7 +103,7 @@ For more information on how to use the `hashgen_ai` package, visit the [document
 
 ### Contributing
 
-We welcome contributions to the `hashgen_ai` package. Before you start, please check the [CONTRIBUTING.md](https://github.com/Kurubaran-CodeSpace/HashGen-AI/blob/main/CONTRIBUTING.md) for guidelines on how to contribute and the [issues.md](https://github.com/Kurubaran-CodeSpace/HashGen-AI/blob/main/issues.md) for known issues and how to report new ones. If you have an idea for a new feature or have found a bug, please open an issue on our [GitHub repository](https://github.com/Kurubaran-CodeSpace/HashGen-AI).
+We welcome contributions to the `hashgen_ai` package. Before you start, please check the [CONTRIBUTING.md](https://github.com/Kurubaran-CodeSpace/HashGen-AI/CONTRIBUTING.md) for guidelines on how to contribute and the [issues.md](https://github.com/Kurubaran-CodeSpace/HashGen-AI/issues.md) for known issues and how to report new ones. If you have an idea for a new feature or have found a bug, please open an issue on our [GitHub repository](https://github.com/Kurubaran-CodeSpace/HashGen-AI).
 
 ### Issues
 
