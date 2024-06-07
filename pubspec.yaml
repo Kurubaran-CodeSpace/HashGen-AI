@@ -2,7 +2,7 @@ name: hashgen_ai
 description: >
   HashGen AI is a Flutter package that leverages OpenAI's API to generate relevant hashtags based on the provided content. This package simplifies the process of adding impactful hashtags to your content, enhancing its discoverability.
 
-version: 1.0.1
+version: 1.0.2
 homepage: https://github.com/Kurubaran-CodeSpace/HashGen-AI
 repository: https://github.com/Kurubaran-CodeSpace/HashGen-AI
 issue_tracker: https://github.com/Kurubaran-CodeSpace/HashGen-AI/issues
