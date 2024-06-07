@@ -1,0 +1,38 @@
+# Dart and Flutter specific files
+.dart_tool/
+.flutter-plugins
+.flutter-plugins-dependencies
+.packages
+.pub/
+build/
+
+# IntelliJ IDEA specific files
+.idea/
+*.iml
+
+# VS Code specific files
+.vscode/
+
+# Mac specific files
+.DS_Store
+
+# Windows specific files
+Thumbs.db
+
+# Linux specific files
+*~
+
+# Dependency directories
+.pub-cache/
+.pub-cache/*
+
+# Logs and databases
+*.log
+*.sqlite
+
+# Generated files
+*.lock
+*.lock.*
+
+# Hidden files
+.*
