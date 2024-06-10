@@ -1,3 +1,7 @@
+## 1.0.3
+
+* Removed deprecated model and added support for ChatGPT 3.5 Turbo model.
+
 ## 1.0.2
 
 * Added detailed production-level comments to the example app in `main.dart`.

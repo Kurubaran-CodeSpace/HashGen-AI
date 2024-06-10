@@ -26,13 +26,23 @@ class HashGenAI {
   Future<List<String>> generateHashtags(String content, int numberOfHashtags) async {
     // Construct the API request
     final response = await client.post(
-      Uri.parse('https://api.openai.com/v1/engines/davinci-codex/completions'),
+      Uri.parse('https://api.openai.com/v1/chat/completions'),
       headers: {
         'Authorization': 'Bearer $apiKey',
         'Content-Type': 'application/json',
       },
       body: jsonEncode({
-        'prompt': 'Generate $numberOfHashtags hashtags for the following content: $content',
+        'model': 'gpt-3.5-turbo',
+        'messages': [
+          {
+            'role': 'system',
+            'content': 'You are a helpful assistant that generates hashtags.'
+          },
+          {
+            'role': 'user',
+            'content': 'Generate $numberOfHashtags hashtags for the following content: $content'
+          },
+        ],
         'max_tokens': 60,
       }),
     );
@@ -41,7 +51,7 @@ class HashGenAI {
     if (response.statusCode == 200) {
       // Parse the JSON response
       final Map<String, dynamic> data = jsonDecode(response.body);
-      final String text = data['choices'][0]['text'];
+      final String text = data['choices'][0]['message']['content'];
 
       // Split the text into individual hashtags and return as a list
       return text.split('\n').where((hashtag) => hashtag.isNotEmpty).toList();
